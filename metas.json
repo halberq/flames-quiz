@@ -1,0 +1,35 @@
+{
+    "metas": [
+        {
+            "id": 1,
+            "type": "Ate Ling’s Enjoyer ",
+            "description": "Every birthday party, I’ll be there. Every Christmas, I’LL BE THERE. Kanang kada naay vacant kay rekta Ate Ling’s dayun para mag-order ug sisig",
+            "image": "client/aly.png"
+        },
+        {
+            "id": 2,
+            "type": "Library Lurkers",
+            "description": "Do you actually exist…? Typa ppl na sedentary ang lifestyle, the only workout u get is by walking from the lib to chss, csm, or dhk. Werk twin",
+            "image": "client/benj.png"
+        },
+        {
+            "id": 3,
+            "type": "EBL Wardens",
+            "description": "RUNS ON STRICT RULES: 1. Bawal magshorts, 2. Bawal late matulog, 3. Bawal bf/gf, 4. Bawal …",
+            "image": "client/eli.png"
+        },
+        {
+            "id": 4,
+            "type": "Sting/lucky day enjoyer",
+            "description": "",
+            "image": "client/mica.png"
+        },
+        {
+            "id": 5,
+            "type": "Never Grow Old",
+            "description": "Like iconnect sha sa kanang mga students na gahulat magannounce ug async classes. Good morning everyo–NEVER GROW OLD?!",
+            "image": "client/theb.png"
+        }
+    ]
+
+}
