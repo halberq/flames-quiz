@@ -4,95 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#07060d">
-    <title>Find your Meta</title>
+    <title>FLAMES</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="client/style.css">
+    <link rel="stylesheet" href="client/flames.css">
 </head>
 <body>
     <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
 
-    <header>
-        <div class="progress" id="progress" aria-hidden="true"></div>
-    </header>
-
     <main>
-        <!-- USERNAME / WELCOME -->
-        <section class="screen active welcome-screen" id="page-username">
-            <div class="welcome-stage">
-                <h1 class="welcome-title">Welcome to</h1>
-
-                <img class="welcome-logo" src="client/find-your-meta.png" alt="Find your Meta">
-
-                <div class="sticker-placeholder sticker-1">
-                    <img src="client/stickers/meta-placeholder-1.png" alt="Meta sticker placeholder 1">
-                </div>
-                <div class="sticker-placeholder sticker-2">
-                    <img src="client/stickers/meta-placeholder-2.png" alt="Meta sticker placeholder 2">
-                </div>
-                <div class="sticker-placeholder sticker-3">
-                    <img src="client/stickers/meta-placeholder-3.png" alt="Meta sticker placeholder 3">
-                </div>
-                <div class="sticker-placeholder sticker-4">
-                    <img src="client/stickers/meta-placeholder-4.png" alt="Meta sticker placeholder 4">
-                </div>
-                <div class="sticker-placeholder sticker-5">
-                    <img src="client/stickers/meta-placeholder-5.png" alt="Meta sticker placeholder 5">
-                </div>
-            </div>
-
-            <p class="welcome-subtitle">Enter your name to begin.</p>
-            <input type="text" id="username-input" placeholder="Your name" autocomplete="given-name" maxlength="30" aria-label="Your name">
-            <button class="btn" id="username-confirm-btn">Continue</button>
+        <!-- 1. NAMES -->
+        <section class="screen active" id="page-names">
+            <h1 class="grad">FLAMES</h1>
+            <p>Enter two names to find out what they are to each other.</p>
+            <form id="names-form" class="names-form" autocomplete="off" novalidate>
+                <input type="text" id="name1" placeholder="First name" maxlength="30" aria-label="First name">
+                <input type="text" id="name2" placeholder="Second name" maxlength="30" aria-label="Second name">
+                <p class="form-error" id="form-error" role="alert"></p>
+                <button class="btn" type="submit">Play</button>
+            </form>
         </section>
 
-        <!-- INTRO -->
-        <section class="screen" id="page-intro">
-            <h1>Hi, <span class="grad" id="intro-name"></span>.</h1>
-            <h2>Ready to find your CODEx Meta?</h2>
-            <p id="quiz-count"></p>
-            <button class="btn" id="start-btn">Start quiz</button>
-
-            <div class="meta-strip intro-meta-strip" aria-label="Meta artwork previews">
-                <img src="client/stickers/meta-placeholder-1.png" alt="Meta 1 placeholder">
-                <img src="client/stickers/meta-placeholder-2.png" alt="Meta 2 placeholder">
-                <img src="client/stickers/meta-placeholder-3.png" alt="Meta 3 placeholder">
-                <img src="client/stickers/meta-placeholder-4.png" alt="Meta 4 placeholder">
-                <img src="client/stickers/meta-placeholder-5.png" alt="Meta 5 placeholder">
-            </div>
+        <!-- 2. CANCEL COMMON LETTERS -->
+        <section class="screen" id="page-cancel">
+            <span class="meta-label">Step 1</span>
+            <h2>Cancel the common letters</h2>
+            <div class="letter-row" id="letters-a" aria-live="polite"></div>
+            <div class="letter-row" id="letters-b"></div>
+            <p id="count-text" class="count-text"></p>
+            <button class="btn hidden" id="reveal-btn">Continue</button>
         </section>
 
-        <!-- QUIZ -->
-        <section class="screen" id="page-quiz">
-            <span class="meta-label" id="question-progress"></span>
-            <h2 id="question-text"></h2>
-            <div class="opts" id="choices-container"></div>
-
-            <div class="meta-strip quiz-meta-strip" aria-label="Meta artwork placeholders">
-                <img src="client/stickers/meta-placeholder-1.png" alt="Meta 1 placeholder">
-                <img src="client/stickers/meta-placeholder-2.png" alt="Meta 2 placeholder">
-                <img src="client/stickers/meta-placeholder-3.png" alt="Meta 3 placeholder">
-                <img src="client/stickers/meta-placeholder-4.png" alt="Meta 4 placeholder">
-                <img src="client/stickers/meta-placeholder-5.png" alt="Meta 5 placeholder">
-            </div>
-        </section>
-
-        <!-- RESULT -->
+        <!-- 3. ELIMINATION + RESULT -->
         <section class="screen" id="page-result">
-            <div class="loader" id="result-loader">
-                <div class="ring"></div>
-                <span>Finding your Meta…</span>
-            </div>
-
-            <div class="stage" id="result-stage">
-                <span class="meta-label" id="result-label"></span>
+            <span class="meta-label" id="step-label">Step 2</span>
+            <h2 id="step-title">Counting through FLAMES</h2>
+            <div class="flames-row" id="flames-row"></div>
+            <div class="final hidden" id="final">
+                <span class="meta-label">You two are</span>
                 <h1 class="grad" id="result-message"></h1>
-                <div class="art" id="result-art">
-                    <img id="result-image" src="" alt="Result">
-                </div>
-                <div class="rules" id="result-rules"></div>
-                <p id="result-description"></p>
-                <button class="btn" id="restart-btn">Take the quiz again</button>
+                <button class="btn" id="restart-btn">Play again</button>
             </div>
         </section>
     </main>
