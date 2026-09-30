@@ -1,10 +1,10 @@
 const FLAMES = [
-  { key: "F", label: "Fubu" },
-  { key: "L", label: "Lover" },
-  { key: "A", label: "Affection" },
-  { key: "M", label: "Marriage" },
-  { key: "E", label: "Enemy" },
-  { key: "S", label: "Sibling" },
+  { key: "F", label: "Friends",      sticker: "client/stickers/friends.png" },
+  { key: "L", label: "Lovers",     sticker: "client/stickers/lovers.png" },
+  { key: "A", label: "Affectionate", sticker: "client/stickers/affectionate.png" },
+  { key: "M", label: "Married",  sticker: "client/stickers/married.png" },
+  { key: "E", label: "Enemies",     sticker: "client/stickers/enemies.png" },
+  { key: "S", label: "Siblings",   sticker: "client/stickers/siblings.png" },
 ];
 
 const $ = (sel) => document.querySelector(sel);
@@ -117,7 +117,10 @@ async function runElimination(count, id) {
 
   cards[winner].classList.add("winner");
   await wait(600);
-  $("#result-message").textContent = FLAMES[winner].label;
+  const w = FLAMES[winner];
+  $("#result-message").textContent = w.label;
+  $("#result-sticker").src = w.sticker;
+  $("#result-sticker").alt = `${w.label} sticker`;
   $("#final").classList.remove("hidden");
 }
 

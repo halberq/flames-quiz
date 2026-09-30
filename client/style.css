@@ -110,9 +110,10 @@ input.err{border-color:var(--pink);animation:shake .3s}
 .sticker-placeholder img{width:100%;height:100%;object-fit:contain}
 .sticker-1{left:4%;top:20%;transform:rotate(-12deg)}
 .sticker-2{left:10%;top:53%;transform:rotate(9deg)}
-.sticker-3{right:4%;top:20%;transform:rotate(11deg)}
-.sticker-4{right:10%;top:53%;transform:rotate(-9deg)}
-.sticker-5{left:50%;bottom:-1%;transform:translateX(-50%) rotate(4deg)}
+.sticker-3{left:35%;bottom:-1%;transform:translateX(-50%) rotate(4deg)}
+.sticker-4{left:65%;bottom:-1%;transform:translateX(-50%) rotate(4deg)}
+.sticker-5 {right:10%;top:53%;transform:rotate(-9deg)}
+.sticker-6{right:4%;top:20%;transform:rotate(11deg)}
 
 .welcome-screen input{max-width:560px}
 

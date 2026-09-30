@@ -9,18 +9,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="client/style.css">
     <link rel="stylesheet" href="client/flames.css">
+    <link rel="icon" href="data:,">
 </head>
 <body>
     <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
 
     <main>
-        <!-- 1. NAMES -->
-        <section class="screen active" id="page-names">
-            <h1 class="grad">FLAMES</h1>
-            <p>Enter two names to find out what they are to each other.</p>
+        <!-- 1. WELCOME + NAMES -->
+        <section class="screen active welcome-screen" id="page-names">
+            <div class="welcome-stage">
+                <h1 class="welcome-title">Welcome to</h1>
+
+                <img class="welcome-logo" src="client/stickers/flamesgame.png" alt="FLAMES Game">
+
+                <div class="sticker-placeholder sticker-1"><img src="client/stickers/friends.png" alt="Friends sticker"></div>
+                <div class="sticker-placeholder sticker-2"><img src="client/stickers/lovers.png" alt="Lovers sticker"></div>
+                <div class="sticker-placeholder sticker-3"><img src="client/stickers/affectionate.png" alt="Affectionate sticker"></div>
+                <div class="sticker-placeholder sticker-4"><img src="client/stickers/married.png" alt="Married sticker"></div>
+                <div class="sticker-placeholder sticker-5"><img src="client/stickers/enemies.png" alt="Enemies sticker"></div>
+                <div class="sticker-placeholder sticker-6"><img src="client/stickers/siblings.png" alt="Siblings sticker"></div>
+            </div>
+
+            <p class="welcome-subtitle">Enter two names to find out what they are to each other.</p>
             <form id="names-form" class="names-form" autocomplete="off" novalidate>
-                <input type="text" id="name1" placeholder="First name" maxlength="30" aria-label="First name">
-                <input type="text" id="name2" placeholder="Second name" maxlength="30" aria-label="Second name">
+                <input type="text" id="name1" placeholder="First name" maxlength="100" aria-label="First name">
+                <input type="text" id="name2" placeholder="Second name" maxlength="100" aria-label="Second name">
                 <p class="form-error" id="form-error" role="alert"></p>
                 <button class="btn" type="submit">Play</button>
             </form>
@@ -42,6 +55,7 @@
             <h2 id="step-title">Counting through FLAMES</h2>
             <div class="flames-row" id="flames-row"></div>
             <div class="final hidden" id="final">
+                <div class="result-art"><img id="result-sticker" src="" alt=""></div>
                 <span class="meta-label">The relationship between you two is</span>
                 <h1 class="grad" id="result-message"></h1>
                 <button class="btn" id="restart-btn">Play again</button>
