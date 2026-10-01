@@ -99,7 +99,16 @@ async function play(name1, name2) {
   $("#count-text").textContent = `${count} letter${count === 1 ? "" : "s"} left`;
   $("#reveal-btn").textContent = "Count through FLAMES";
   $("#reveal-btn").classList.remove("hidden");
-  $("#reveal-btn").onclick = () => runElimination(count, id, name1, name2);
+  $("#reveal-btn").onclick = () => showTerms(count, id, name1, name2);
+}
+
+function showTerms(count, id, name1, name2) {
+  const checkbox = $("#terms-agree");
+  const continueButton = $("#terms-continue");
+  checkbox.checked = false;
+  continueButton.disabled = true;
+  continueButton.onclick = () => runElimination(count, id, name1, name2);
+  show("#page-terms");
 }
 
 async function runElimination(count, id, name1, name2) {
@@ -167,3 +176,6 @@ $("#names-form").addEventListener("submit", (e) => {
 });
 
 $("#restart-btn").addEventListener("click", restart);
+$("#terms-agree").addEventListener("change", (e) => {
+  $("#terms-continue").disabled = !e.target.checked;
+});

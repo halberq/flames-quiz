@@ -40,6 +40,43 @@
             color:var(--text);
             font-weight:600}
 
+.terms-screen{max-width:560px}
+
+.terms-copy{max-width:48ch;
+            color:var(--muted);
+            line-height:1.6;
+            text-align:left}
+
+.terms-list{width:100%;
+            max-width:58ch;
+            margin:0 0 8px;
+            padding-left:1.5rem;
+            color:var(--text);
+            text-align:left;
+            line-height:1.5}
+
+.terms-list li{padding-left:5px;
+                margin-bottom:10px}
+
+.terms-list strong{color:var(--text)}
+
+.terms-agreement{display:flex;
+                 align-items:flex-start;
+                 gap:10px;
+                 max-width:48ch;
+                 margin:8px 0;
+                 line-height:1.5;
+                 cursor:pointer}
+
+.terms-agreement input{width:18px;
+                       height:18px;
+                       flex:0 0 auto;
+                       margin-top:3px;
+                       accent-color:var(--violet)}
+
+.terms-screen .btn:disabled{opacity:.45;
+                             cursor:not-allowed}
+
 .flames-row{display:flex;
             flex-wrap:wrap;
             justify-content:center;
