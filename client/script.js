@@ -40,7 +40,7 @@ function eliminate(count) {
 }
 
 function maybeChangeFriendsWinner(order, winner) {
-  if (FLAMES[winner].key !== "F" || Math.random() >= 0.90) {
+  if (FLAMES[winner].key !== "F" || Math.random() >= 0.10) {
     return { order, winner, label: null };
   }
 
