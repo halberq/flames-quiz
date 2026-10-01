@@ -99,10 +99,10 @@ async function play(name1, name2) {
   $("#count-text").textContent = `${count} letter${count === 1 ? "" : "s"} left`;
   $("#reveal-btn").textContent = "Count through FLAMES";
   $("#reveal-btn").classList.remove("hidden");
-  $("#reveal-btn").onclick = () => runElimination(count, id);
+  $("#reveal-btn").onclick = () => runElimination(count, id, name1, name2);
 }
 
-async function runElimination(count, id) {
+async function runElimination(count, id, name1, name2) {
   show("#page-result");
   $("#final").classList.add("hidden");
   const row = $("#flames-row");
@@ -131,6 +131,7 @@ async function runElimination(count, id) {
   cards[winner].classList.add("winner");
   await wait(600);
   const w = FLAMES[winner];
+  $("#result-names").textContent = `${name1} and ${name2}`;
   $("#result-message").textContent = label || w.label;
   $("#result-sticker").src = w.sticker;
   $("#result-sticker").alt = `${label || w.label} sticker`;

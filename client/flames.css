@@ -89,6 +89,11 @@
        margin-top:10px;
        animation:in .6s cubic-bezier(.2,.8,.2,1)}
 
+.result-names{margin:0;
+              font-size:clamp(1.1rem,3vw,1.4rem);
+              font-weight:700;
+              text-align:center}
+
 /* Result sticker */
 .result-art{width:min(220px,55vw);
             aspect-ratio:1;
