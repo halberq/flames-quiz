@@ -39,6 +39,23 @@ function eliminate(count) {
   return { order, winner: pool[0] };
 }
 
+function maybeChangeFriendsWinner(order, winner) {
+  if (FLAMES[winner].key !== "F" || Math.random() >= 0.90) {
+    return { order, winner, label: null };
+  }
+
+  const alternatives = FLAMES
+    .map((_, index) => index)
+    .filter((index) => index !== winner);
+  const alternateWinner = alternatives[Math.floor(Math.random() * alternatives.length)];
+
+  return {
+    order: order.filter((index) => index !== alternateWinner).concat(winner),
+    winner: alternateWinner,
+    label: "Fubu",
+  };
+}
+
 function show(id) {
   document.querySelectorAll(".screen").forEach((s) => s.classList.remove("active"));
   $(id).classList.add("active");
@@ -103,7 +120,8 @@ async function runElimination(count, id) {
     return c;
   });
 
-  const { order, winner } = eliminate(count);
+  const eliminated = eliminate(count);
+  const { order, winner, label } = maybeChangeFriendsWinner(eliminated.order, eliminated.winner);
   await wait(700);
   for (const idx of order) {
     if (id !== runId) return;
@@ -118,9 +136,9 @@ async function runElimination(count, id) {
   cards[winner].classList.add("winner");
   await wait(600);
   const w = FLAMES[winner];
-  $("#result-message").textContent = w.label;
+  $("#result-message").textContent = label || w.label;
   $("#result-sticker").src = w.sticker;
-  $("#result-sticker").alt = `${w.label} sticker`;
+  $("#result-sticker").alt = `${label || w.label} sticker`;
   $("#final").classList.remove("hidden");
 }
 
