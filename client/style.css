@@ -506,8 +506,8 @@ input.err{
 .sticker-placeholder{
     position:absolute;
     z-index:2;
-    width:145px;
-    height:145px;
+    width:175px;
+    height:175px;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -522,38 +522,38 @@ input.err{
 }
 
 .sticker-1{
-    left:4%;
-    top:20%;
+    left:14%;
+    top:18%;
     transform:rotate(-12deg)
 }
 
 .sticker-2{
-    left:10%;
-    top:53%;
+    left:15%;
+    top:50%;
     transform:rotate(9deg)
 }
 
 .sticker-3{
-    left:35%;
-    bottom:-1%;
+    left:40%;
+    bottom:1%;
     transform:translateX(-50%) rotate(4deg)
 }
 
 .sticker-4{
-    left:65%;
-    bottom:-1%;
+    left:60%;
+    bottom:1%;
     transform:translateX(-50%) rotate(4deg)
 }
 
 .sticker-5 {
-    right:10%;
-    top:53%;
+    right:15%;
+    top:50%;
     transform:rotate(-9deg)
 }
 
 .sticker-6{
-    right:4%;
-    top:20%;
+    right:12%;
+    top:18%;
     transform:rotate(11deg)
 }
 
@@ -562,21 +562,22 @@ input.err{
 }
 
 @media (max-width:900px){
-    .welcome-stage{height:clamp(390px,62vw,500px)}
+    .welcome-stage{height:clamp(400px,65vw,520px)}
     .welcome-logo{width:min(450px,52vw)}
-    .sticker-placeholder{width:115px;height:115px}
+    .sticker-placeholder{width:140px;height:140px}
 }
 
-@media (max-width:600px){
-    .welcome-stage{height:360px;width:100%;margin-top:-4px}
-    .welcome-title{font-size:1.5rem;margin-bottom:-5px}
-    .welcome-logo{width:70vw;max-width:330px}
-    .sticker-placeholder{width:82px;height:82px}
-    .sticker-1{left:0%;top:19%}
-    .sticker-2{left:2%;top:53%}
-    .sticker-3{right:0%;top:19%}
-    .sticker-4{right:2%;top:53%}
-    .sticker-5{bottom:-2%;}
+@media (max-width: 510px) {
+    .welcome-stage { height: 380px; width: 100%; margin-top: -4px; }
+    .welcome-title { font-size: 1.5rem; margin-bottom: -5px; }
+    .welcome-logo { width: 70vw; max-width: 330px; }
+    .sticker-placeholder { width: 100px; height: 100px; } 
+    .sticker-1 { left: 8%; top: 18%; }
+    .sticker-2 { left: 12%; top: 52%; }
+    .sticker-3 { left: 38%; bottom: 0%; }
+    .sticker-4 { left: 62%; bottom: 0%; }
+    .sticker-5 { right: 12%; top: 52%; }
+    .sticker-6 { right: 8%; top: 18%; }
 }
 
 
