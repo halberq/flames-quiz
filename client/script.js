@@ -44,14 +44,9 @@ function maybeChangeFriendsWinner(order, winner) {
     return { order, winner, label: null };
   }
 
-  const alternatives = FLAMES
-    .map((_, index) => index)
-    .filter((index) => index !== winner);
-  const alternateWinner = alternatives[Math.floor(Math.random() * alternatives.length)];
-
   return {
-    order: order.filter((index) => index !== alternateWinner).concat(winner),
-    winner: alternateWinner,
+    order,
+    winner,
     label: "Fubu",
   };
 }
